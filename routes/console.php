@@ -1,18 +1,21 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
-
-/*
-|--------------------------------------------------------------------------
-| Console Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of your Closure based console
-| commands. Each Closure is bound to a command instance allowing a
-| simple approach to interacting with each command's IO methods.
-|
-*/
-
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+
+Artisan::command('video:hls', function(){
+	$videos = App\Video::where([
+		'deleted' => 0,
+		'converted' => 0
+	])->get();
+
+	foreach ($videos as $video) {
+		// covnert
+		
+		// update and save
+	}
+
+});
