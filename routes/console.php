@@ -32,6 +32,7 @@ Artisan::command('video:hls', function(){
         $video->playlist = "/{$video->id}/playlist.m3u8";
         $video->proccess = 'End';
         $video->save();
+        unlink($tmp_upload);
         echo $video->id . " Done. \n\r";
         } else {
         echo $video->id . " File not founded. \n\r";
